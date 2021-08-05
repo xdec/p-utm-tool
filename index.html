@@ -1,0 +1,301 @@
+<!--
+    Created By: Xavier
+    Created On: 5/25/2020 10:00am
+    Last Updated: 8/05/2021 22:11pm
+    Last Update By: Xavier
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UTM Builder</title>
+        <meta title="UTM Builder">
+        <meta name="description" content="Use this UTM builder to build trackable urls to
+                    measure the performance of your campaigns.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+    </head>
+    <body>
+        <!-- Nav -->
+        <div id="alphaNavWrap" class="alpha-nav-wrap">
+            <div class="alpha-nav-inner">
+                <div class="alpha-nav-center">
+                    <div class="logo-wrap">
+                        <a href="" class="logo-link">
+                            <img class="logo-img" src="./img/owl-white-512.png" alt="Mighty Owl logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Nav -->
+        <section id="header" class="header-section">
+            <div class="title-wrap">
+                <h1 class="page-title">UTM Builder</h1>
+            </div>
+        </section>
+        <section id="formSection" class="form-section">
+            <div class="formWrap">
+                <form name="utmForm" id="utmForm" class="utm-form">
+                    <div class="formValidate">
+                        <label class="formLabel" for="website">Enter URL:</label>
+                        <p id="invalid00" class="hidden">
+                            <span class="material-icons">
+                                report
+                            </span>
+                            <span class="invalidText">Please insert a URL</span>
+                        </p>
+                    </div>
+                    <input name="website" class="formField" id="website" type="url" pattern="https?://.+" required>
+                    <!-- Channels -->
+                    <div class="formValidate">
+                        <label name="channel" id="channel" class="formLabel">Select A Channel:</label>
+                        <p id="invalid05" class="hidden">
+                            <span class="material-icons">
+                                report
+                            </span>
+                            <span class="invalidText">Please select a Channel</span>
+                        </p>
+                    </div>
+                    <select name="channelSelect" id="channelSelect" class="formField">
+                        <option value=""></option>
+                        <option value="Social">Social</option>
+                        <option value="Display">Display</option>
+                        <option value="Email">Email</option>
+                        <option value="3rd Party">3rd Party</option>
+                    </select>
+                    <!-- Sources -->
+                    <div id="defaultSourceDiv" class="field-wrap">
+                        <div class="formValidate">
+                            <label class="formLabel" for="defaultSource">UTM Source:</label>
+                            <p id="invalid02" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Source</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select name="defaultSource" id="defaultSource" class="formField">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div id="socialSourceDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="SocialOnly">UTM Source:</label>
+                            <p id="invalid06" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Source</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="Social" id="socialOnly" class="formField hidden">
+                            <option class="social" value="Facebook">Facebook</option>
+                            <option class="social" value="Instagram">Instagram</option>
+                            <option class="social" value="LinkedIn">LinkedIn</option>
+                            <option class="social" value="Twitter">Twitter</option>
+                            <option class="social" value="YouTube">YouTube</option>
+                        </select>
+                    </div>
+                    <div id="displaySourceDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="displayOnly">UTM Source:</label>
+                            <p id="invalid07" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Source</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="Display" id="displayOnly" class="formField hidden">
+                            <option class="display" value="Eskimi">DV360</option>
+                            <option class="display" value="Criteo">Google Ads</option>
+                            <option class="display" value="Verizon">Verizon Media</option>
+                        </select>
+                    </div>
+                    <div id="emailSourceDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="emailOnly">UTM Source:</label>
+                            <p id="invalid08" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Source</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="Email" id="emailOnly" class="formField hidden">
+                            <option class="email" value="Email">Email</option>
+                        </select>
+                    </div>
+                    <div id="thirdSourceDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="thirdOnly">UTM Source:</label>
+                            <p id="invalid09" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Source</span>
+                                </p>
+                            </p>
+                        </div>
+                        <input type="text" name="thirdOnly" id="thirdOnly" class="formField third hidden">
+                    </div>
+                    <!-- Mediums -->
+                    <div id="defaultMediumDiv" class="field-wrap">
+                        <div class="formValidate">
+                            <label class="formLabel" for="defaultMedium">UTM Medium:</label>
+                            <p id="invalid03" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Medium</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="" id="defaultMedium" class="formField">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div id="displayMediumDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="displayMedium">UTM Medium:</label>
+                            <p id="invalid10" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Medium</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="Display" id="displayMedium" class="formField hidden">
+                            <option class="display" value="banner">banner</option>
+                            <option class="display" value="cpm">cpm</option>
+                            <option class="display" value="display">display</option>
+                        </select>
+                    </div>
+                    <div id="socialMediumDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="socialMedium">UTM Medium:</label>
+                            <p id="invalid11" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Medium</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="Social" id="socialMedium" class="formField hidden">
+                            <option class="social" value="cpa">cpa</option>
+                            <option class="social" value="cpv">cpv</option>
+                            <option class="social" value="social">organic social</option>
+                        </select>
+                    </div>
+                    <div id="emailMediumDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="emailMedium">UTM Medium:</label>
+                            <p id="invalid12" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Medium</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="Email" id="emailMedium" class="formField hidden">
+                            <option class="email" value="email">email</option>
+                        </select>
+                    </div>
+                    <div id="thirdMediumDiv" class="field-wrap hidden">
+                        <div class="formValidate">
+                            <label class="formLabel" for="thirdMedium">UTM Medium:</label>
+                            <p id="invalid13" class="hidden">
+                                <p id="invalid05" class="hidden">
+                                    <span class="material-icons">
+                                        report
+                                    </span>
+                                    <span class="invalidText">Please select a Medium</span>
+                                </p>
+                            </p>
+                        </div>
+                        <select label="3rd Party" id="thirdMedium" class="formField hidden">
+                            <option class="third" value="banner">banner</option>
+                            <option class="third" value="cpm">cpm</option>
+                            <option class="third" value="cpv">cpv</option>
+                            <option class="third" value="referral">referral</option>
+                        </select>
+                    </div>
+                    <div class="formValidate">
+                        <label class="formLabel" for="utmCampaign">UTM Campaign:</label>
+                        <p id="invalid04" class="hidden">
+                            <p id="invalid05" class="hidden">
+                                <span class="material-icons">
+                                    report
+                                </span>
+                                <span class="invalidText">Please insert a Campaign Name</span>
+                            </p>
+                        </p>
+                    </div>
+                        <input name="utmCampaign" class="formField" id="utmCampaign" type="text">
+                    <label class="formLabel" for="utmContent">UTM Content (Optional):</label>
+                        <input name="utmContent" class="formField" id="utmContent" type="text">
+                    <label class="formLabel" for="utmKeyword">UTM Keyword (Optional):</label>
+                        <input name="utmKeyword" class="formField" id="utmKeyword" type="text">
+                </form>
+                <div class="button-wrap">
+                    <button type="submit" id="fullURL" class="formButton">
+                        <span class="material-icons">
+                            link
+                        </span>
+                        <span class="formButtonText">Get Full URLs</span>
+                    </button>
+                    <button type="submit" id="parameterURL" class="formButton">
+                        <span class="material-icons">
+                            link_off
+                        </span>
+                        <span class="formButtonText">Get Parameters Only</span>
+                    </button>
+                </div>
+                <div class="result-div">
+                    <p class="resultLabel">Copy & Paste URL:</p>
+                    <textarea id="result" class="utmResult" readonly></textarea>
+                    <button id="clipboardCopy" class="formButton copyButton">
+                        <span class="material-icons">
+                            file_copy
+                        </span>
+                        <span class="formButtonText">Copy To Clipboard</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <div class="footer-wrap">
+            <div class="footer-elements">
+                <div class="footer-element">
+                    <img class="footer-logo" src="./img/owl-white-512.png" alt="Mighty Owl Logo">
+                </div>
+                <div class="footer-element">
+                    <p class="footer-text">Copyright &copy; 2021 Xavier De Carvalho</p>
+                </div>
+            </div>
+        </div>
+        <script src="./js/livescript.js?0.0.05" defer></script>
+        <link rel="stylesheet" href="./style/style.css?0.0.01" defer>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin defer>
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" defer>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" defer>
+    </body>
+</html>
