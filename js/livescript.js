@@ -36,19 +36,24 @@ const formWebsite = document.getElementById("website");
 //Result
 const formResult = document.getElementById("result");
 // Dynamic Global Variables
-// Get Sources
-let defaultSource, socialSource, displaySource, emailSource, sourceOther;
-// Get Mediums
-let defaultMedium, socialMedium, displayMedium, emailMedium, thirdMedium;
-// Website
-let website;
-// Changing/Storage Variables
-// Store source and medium
-let source, medium;
-// Import Form Values & Concatenate with static strings
-let campaign, content, keyword;
+let defaultSource,
+    socialSource,
+    displaySource,
+    emailSource,
+    sourceOther,
+    defaultMedium,
+    socialMedium,
+    displayMedium,
+    emailMedium,
+    thirdMedium,
+    website,
+    source,
+    medium,
+    campaign,
+    content,
+    keyword,
+    result;
 let utmArr = [];
-let result;
 // Init Variables Function
 const varInit = (a,b,c,d,e,f,g,h,i,j,k) => {
   // Get Sources
